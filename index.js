@@ -62,6 +62,7 @@ const {
             image-rendering: -webkit-optimize-contrast;
             color:black;
             font-size: 0;
+            font-family: 'PingFang SC', 'Helvetica Neue', 'Segoe UI', 'Microsoft YaHei', sans-serif !important;
         }
 
         html, body {

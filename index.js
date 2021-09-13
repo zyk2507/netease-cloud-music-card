@@ -4,7 +4,7 @@ const { user_record, song_detail, user_account } = require('NeteaseCloudMusicApi
 const axios = require('axios').default;
 
 async function getBase64(url) {
-    const response = await axios.get(url, { responseType: 'arraybuffer' });;
+    const response = await axios.get(url, { responseType: 'arraybuffer' });
     return Buffer.from(response.data, 'binary').toString('base64');
 }
 

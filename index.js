@@ -169,36 +169,24 @@ const {
     </style>
         <div class="card">
             <div class="user">
-                <img class="avatar" src="https://raw.githubusercontent.com/Nthily/neteasemusic-github-profile/main/cache/avatar.jpg"/>
+                <img class="avatar" src="data:image/jpg;base64,${await getBase64(avatarUrl)}"/>
                 <a class="username">Nthily</a>
                 <a class="button"></a>
                 <div class="clear"></div>
             </div>
             <div class="hello">
-                <img class="neteasecloud" src="https://raw.githubusercontent.com/Nthily/neteasemusic-github-profile/main/cache/netease.png" />
+                <img class="neteasecloud" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABoVBMVEUAAADdABvdABvdABvdABvdABvdABvdABvdABvdABvdABvdABvdABvdABvdABvdABvdABviJz7pXW7nS17eBiDugo/////62t7hHDTgEyzufYvdARzlOk/50tf+9vfteojpWGr97vDgGTH3xszjKkHviZXteIb86OrrbHzra3v509jqX3D0rbbfDijiIjnwkp7ynqjqYnP98vPzpa/wjpr++vv87O7pWmv74OPeCiT0q7T3w8n3wsj97/HraXndAx786uzrZ3foU2X++/vpV2nnSVz85+rfECn0rrf//PzjMEbjLEL2u8LeCSP+9/jjL0X4ytD1tb3nTF/74uXkNkv3wMfmRFj//f3pW2z619v86evlO1D0r7fscH/+9PXmRVnnSFv98PL1sbn0qbLgFS786+363eHoVmjhGzPkOE35z9Tyn6n85un62Nz97e/nSl350dbqXm/73+LraHjjK0Hufoz4yc/eBR/51dnnTWDjLUP98fLeCyXwkJz4yM7tdYTlOU7oUmT0qrP1srrranrkM0n4ztP+9fb75Of1tLzfDCZ1sXtGAAAAEHRSTlMAE2Ok0vMup/oNl/4r2zjxygE/KQAAAAFiS0dEFnzRqBkAAAAHdElNRQflCQ0QCDMeCNJTAAABwElEQVQ4y41T9VtCUQx9lAiiTsWjiIndhdiN3d2Kjd3dHX+1F+59DzA+PD9s+9727razTZIUqNQarY5Ip9WoVdJPhOhDSUGoPuSb22AMowCEGQ3+flM4/UC4yeePiKRfEBmh/B/oj4qOMfMI8YYh8P1YAHHxPAuvwyi7LAkJVkoEkpKRwr8Yvf3J9aemATZKQTplZNpEL55u9cKfBWTnEOUizy+fnvEn+MkHCgqJioqBktJChTGVpOaWrQzlVjLbK+CBo1KOUEsabthRVU1UA9TWwVEPNIgAjaT16sYmNBO1oNVJbWjv6ERXNw/QSjqv7gEsRL3IJOrrx4B5EEM8QCdxPYwRJh0YZXIMpTSOCQv3iIBJTDE5jRkmZzFHjfNYEAE8hQuLTC5hmWhlFS6iNayLFLxIN8Cq2pjA5tY2dtisdrEnihRt7qOYyYN+RsJhD1E34BZtCqKOUHHs4SvnxNnHdAFOZaIE1WfnWHMrI8gFLmSq5WFdXqG9jZvXN8CWMixl3Bts2rd3rvuHGwfwaPaNW1mY+CcILD5b/RbGb+Ve7K9pb+8fR5/yYht+XVrfWpv+u/bBDyf46QU/3r/P/wt/IFj7qdvKMgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMS0wOS0xM1QxNjowODo1MSswMDowMKszm9EAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjEtMDktMTNUMTY6MDg6NTErMDA6MDDabiNtAAAAAElFTkSuQmCC" />
                 <a class="intro">这周听了多达 ${playCount} 次</a>
             </div>
             <p class="song">${songName}</p>
             <p class="singer">${songAuthors}</p>
-            <img class="cover" src="https://raw.githubusercontent.com/Nthily/neteasemusic-github-profile/main/cache/cover.jpg" />
+            <img class="cover" src="data:image/jpg;base64,${await getBase64(songCover)}" />
         </div>
     </div>
 </foreignObject>
 </svg>
 `
         ).toString("base64");
-        /*<img class="avatar" src="data:image/jpg;base64,${await getBase64(avatarUrl)}"/>
-                <a class="username">Nthily</a>
-                <a class="button"></a>
-                <div class="clear"></div>
-            </div>
-            <div class="hello">
-                <img class="neteasecloud" src="data:image/x-icon;base64,AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGwDdExsA3WMbAN2kGwDd0hsA3fMbAN3/GwDd/xsA3fMbAN3SGwDdpBsA3WMbAN0TAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGwDdLhsA3acbAN36GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3fobAN2nGwDdLgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGwDdDRsA3ZcbAN3+GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3+GwDdlxsA3Q0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABsA3SsbAN3bGwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd2xsA3SsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbAN04GwDd8RsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd8RsA3TgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGwDdKxsA3fEbAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd8RsA3SsAAAAAAAAAAAAAAAAAAAAAAAAAABsA3Q0bAN3bGwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f9JM+T/mo7w/9PO+P/w7v3/9vX+/+fk+/+8tPX/eGjr/yYM3/8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd2xsA3Q0AAAAAAAAAAAAAAAAAAAAAGwDdlxsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f80HOH/urL1////////////////////////////////////////////8vD9/3pq6/8cAd3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDdlwAAAAAAAAAAAAAAABsA3S4bAN3+GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/TTjk//Du/f///////////87I+P+Ede3/W0jn/0455f9kUuj/nJDw/+7s/P///////////7Oq9P8gBt7/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3+GwDdLgAAAAAAAAAAGwDdpxsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/0Mt4//y8f3//////+rn/P9cSef/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/JQve/5yQ8P///////////6mf8v8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN2nAAAAABsA3RMbAN36GwDd/xsA3f8bAN3/GwDd/xsA3f8fBd7/2dX5///////h3fr/Mxvh/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/3tr6////////////2BN5/8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3fobAN0TGwDdYxsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/3ho6///////+/r+/0Er4/8bAN3/GwDd/xsA3f8xGeD/fGzr/4x+7v9pV+n/Iwne/xsA3f8bAN3/GwDd/7at9P//////z8n4/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3WMbAN2kGwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/1tH5//////+ekvD/GwDd/xsA3f8bAN3/b17q//j3/v/////////////////i3/v/Qizj/xsA3f8bAN3/RjDj////////////Mxvh/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDdpBsA3dIbAN3/GwDd/xsA3f8bAN3/GwDd/zMb4f///////////0Yw4/8bAN3/GwDd/0045P/9/f///////9TP+f+pn/L/6eb8///////c2Pr/IAbe/xsA3f8bAN3/7+39//////9dSuf/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3SGwDd8xsA3f8bAN3/GwDd/xsA3f8bAN3/W0jn///////y8P3/GwDd/xsA3f8bAN3/ubH1//////+yqfT/GwDd/xsA3f8uFeD/7ev8//////9bSOf/GwDd/xsA3f/h3fr//////2hW6P8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3fMbAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f9sW+n//////9vX+v8bAN3/GwDd/xsA3f/r6fz//////1A75f8bAN3/GwDd/xsA3f+3r/T//////39w7P8bAN3/HgPd//X0/v//////WUXm/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/19M5///////5eL7/xsA3f8bAN3/GwDd/+7s/P//////Szbk/xsA3f8bAN3/GwDd/8fA9///////c2Lq/xsA3f9YROb///////39//8sE+D/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd8xsA3f8bAN3/GwDd/xsA3f8bAN3/Qizj////////////LBPg/xsA3f8bAN3/wrv2//////+Vie//GwDd/xsA3f8jCd7/+Pf+//////9FL+P/IAbe/9DK+P//////vbX1/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3fMbAN3SGwDd/xsA3f8bAN3/GwDd/xsA3f8eA93/7Or8//////93Z+v/GwDd/xsA3f9lU+j///////v7/v9pV+n/GwDd/1xJ5///////6uf8/ykQ3/+3rvT///////z8//9GMOP/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd0hsA3aQbAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f+ajvD//////+Pg+/8kCt7/GwDd/xsA3f+0q/T////////////Jw/f/yML3///////u7Pz/8e/9////////////eWnr/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN2kGwDdYxsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/zEZ4P/z8v3//////6+l8/8cAd3/GwDd/yAG3v+ajvD/+/r+////////////////////////////7uz8/2ta6f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3WMbAN0TGwDd+hsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/3Bf6v///////////7at9P8oDt//GwDd/xsA3f85IuL/npLw////////////qJ7y/3Ni6v8oDt//GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN36GwDdEwAAAAAbAN2nGwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/4Z47f///////////+ro/P98bOv/GwDd/xsA3f97a+v//////9jT+f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3acAAAAAAAAAABsA3S4bAN3+GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/2pY6f/w7v3///////////8xGeD/GwDd/4h67f//////zMb3/xsA3f9BKuP/lYnv/zEZ4P8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3+GwDdLgAAAAAAAAAAAAAAABsA3ZcbAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/ywT4P+Lfe7/i33u/xwB3f8bAN3/Tzrl////////////19L5//f2/v//////iHrt/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3ZcAAAAAAAAAAAAAAAAAAAAAGwDdDRsA3dsbAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/j4Lu/////////////////97a+v80HOH/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3bGwDdDQAAAAAAAAAAAAAAAAAAAAAAAAAAGwDdKxsA3fEbAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/Pifi/25d6f9eS+f/IAbe/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd8RsA3SsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGwDdOBsA3fEbAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3fEbAN04AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGwDdKxsA3dsbAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3bGwDdKwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGwDdDRsA3ZcbAN3+GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3+GwDdlxsA3Q0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABsA3S4bAN2nGwDd+hsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN3/GwDd/xsA3f8bAN36GwDdpxsA3S4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbAN0TGwDdYxsA3aQbAN3SGwDd8xsA3f8bAN3/GwDd8xsA3dIbAN2kGwDdYxsA3RMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/8AD//8AAP/8AAA/+AAAH/AAAA/gAAAHwAAAA8AAAAOAAAABgAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAGAAAABwAAAA8AAAAPgAAAH8AAAD/gAAB/8AAA//wAA///AA/8=" />
-                <a class="intro">这周听了多达 ${playCount} 次</a>
-            </div>
-            <p class="song">${songName}</p>
-            <p class="singer">${songAuthors}</p>
-            <img class="cover" src="data:image/jpg;base64,${await getBase64(songCover)}" />*/
     } catch(err) {
         console.error(`处理 SVG 时发生了错误：${err}`);
     }
@@ -217,7 +205,7 @@ const {
             encoding: "base64"
         });
 
-        const {
+        /*const {
             data: { sha: avatarSha }
         } = await octokit.git.createBlob({
             owner: "Nthily",
@@ -232,7 +220,7 @@ const {
             repo: "neteasemusic-github-profile",
             content: await getBase64(songCover),
             encoding: "base64"
-        });
+        });*/
 
         const commits = await octokit.repos.listCommits({
             owner: "Nthily",
@@ -250,7 +238,7 @@ const {
                     path: "music_card.svg",
                     type: "blob",
                     sha: svgSha
-                },
+                }/*,
                 {
                     mode: '100644',
                     path: "cache/avatar.jpg",
@@ -262,7 +250,7 @@ const {
                     path: "cache/cover.jpg",
                     type: "blob",
                     sha: coverSha
-                }
+                }*/
             ],
             base_tree: lastSha,
         });

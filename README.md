@@ -1,4 +1,4 @@
-<div align="center"><img src="music_card.svg"></div>
+<div align="center"><img src="https://cdn.jsdelivr.net/gh/nthily/neteasemusic-github-profile@main/music_card.svg"></div>
 
 <div align="center"><h1>neteasemusic-github-profile</h1></div>
 

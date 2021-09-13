@@ -38,6 +38,23 @@
 
 `Fork` 项目或者新建一份。
 
-`npm install`
+`
+npm install
+
+`
 
 `card` 文件夹下为测试界面部分，可以自己设计界面。
+
+如果你想直接在仓库的 `workflow` 里面查看详细的输出，可以不需要 `.env` 文件
+
+如果你想在本地测试网易云 API 并且查看，请填写相应的值，并注意在 `push` 到仓库时删除
+
+## 灵感和帮助：
+
+[spotify-github-profile](https://github.com/kittinan/spotify-github-profile)
+
+[netease-music-box](https://github.com/Leecason/netease-music-box)
+
+[NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
+
+

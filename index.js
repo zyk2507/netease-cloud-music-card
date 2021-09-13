@@ -19,7 +19,7 @@ const {
         cookie: `MUSIC_U=${USER_TOKEN}`,
     })
 
-    const avatarUrl = account.body.profile.avatarUrl;
+    const avatarUrl = account.body.profile.avatarUrl + "?param=32y32"; // 压缩
     console.log(`个人头像: ${avatarUrl}`);
 
     /*
@@ -45,9 +45,9 @@ const {
         ids: songId,
     }).catch(error => console.error(`无法获取歌曲信息 \n${error}`));
 
-    const songPicUrl = songDetail.body.songs[0].al.picUrl;
+    const songCover = songDetail.body.songs[0].al.picUrl + "?param=300y300";
 
-    console.log(`歌曲名：${songName}\n歌曲作者：${songAuthors}\n歌曲封面：${songPicUrl}\n播放次数：${playCount}`);
+    console.log(`歌曲名：${songName}\n歌曲作者：${songAuthors}\n歌曲封面：${songCover}\n播放次数：${playCount}`);
 
     var svgContent = "";
     try {
@@ -169,7 +169,25 @@ const {
     </style>
         <div class="card">
             <div class="user">
-                <img class="avatar" src="data:image/jpg;base64,${await getBase64(avatarUrl)}"/>
+                <img class="avatar" src="https://raw.githubusercontent.com/Nthily/neteasemusic-github-profile/main/cache/avatar.jpg"/>
+                <a class="username">Nthily</a>
+                <a class="button"></a>
+                <div class="clear"></div>
+            </div>
+            <div class="hello">
+                <img class="neteasecloud" src="https://raw.githubusercontent.com/Nthily/neteasemusic-github-profile/main/cache/netease.png" />
+                <a class="intro">这周听了多达 ${playCount} 次</a>
+            </div>
+            <p class="song">${songName}</p>
+            <p class="singer">${songAuthors}</p>
+            <img class="cover" src="https://raw.githubusercontent.com/Nthily/neteasemusic-github-profile/main/cache/cover.jpg" />
+        </div>
+    </div>
+</foreignObject>
+</svg>
+`
+        ).toString("base64");
+        /*<img class="avatar" src="data:image/jpg;base64,${await getBase64(avatarUrl)}"/>
                 <a class="username">Nthily</a>
                 <a class="button"></a>
                 <div class="clear"></div>
@@ -180,13 +198,7 @@ const {
             </div>
             <p class="song">${songName}</p>
             <p class="singer">${songAuthors}</p>
-            <img class="cover" src="data:image/jpg;base64,${await getBase64(songPicUrl)}" />
-        </div>
-    </div>
-</foreignObject>
-</svg>
-`
-        ).toString("base64");
+            <img class="cover" src="data:image/jpg;base64,${await getBase64(songCover)}" />*/
     } catch(err) {
         console.error(`处理 SVG 时发生了错误：${err}`);
     }
@@ -195,6 +207,7 @@ const {
         const octokit = new Octokit({
             auth: GH_TOKEN,
         });
+
         const {
             data: { sha: svgSha }
         } = await octokit.git.createBlob({
@@ -203,6 +216,24 @@ const {
             content: svgContent,
             encoding: "base64"
         });
+
+        const {
+            data: { sha: avatarSha }
+        } = await octokit.git.createBlob({
+            owner: "Nthily",
+            repo: "neteasemusic-github-profile",
+            content: await getBase64(avatarUrl),
+            encoding: "base64"
+        });
+        const {
+            data: { sha: coverSha }
+        } = await octokit.git.createBlob({
+            owner: "Nthily",
+            repo: "neteasemusic-github-profile",
+            content: await getBase64(songCover),
+            encoding: "base64"
+        });
+
         const commits = await octokit.repos.listCommits({
             owner: "Nthily",
             repo: "neteasemusic-github-profile",
@@ -219,6 +250,18 @@ const {
                     path: "music_card.svg",
                     type: "blob",
                     sha: svgSha
+                },
+                {
+                    mode: '100644',
+                    path: "cache/avatar.jpg",
+                    type: "blob",
+                    sha: avatarSha
+                },
+                {
+                    mode: '100644',
+                    path: "cache/cover.jpg",
+                    type: "blob",
+                    sha: coverSha
                 }
             ],
             base_tree: lastSha,
@@ -237,7 +280,7 @@ const {
                 email: "41898282+github-actions[bot]@users.noreply.github.com",
             },
             tree: treeSHA,
-            message: 'update SVG periodically - [Skip Github Action]',
+            message: 'Update SVG periodically',
             parents: [ lastSha ],
         });
         const result = await octokit.git.updateRef({

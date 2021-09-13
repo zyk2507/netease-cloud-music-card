@@ -52,8 +52,8 @@ const {
     var svgContent = "";
     try {
         svgContent = Buffer.from(
-`<svg width="320" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<foreignObject width="320" height="480">
+`<svg width="320" height="500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<foreignObject width="320" height="500">
     <div xmlns="http://www.w3.org/1999/xhtml" class="container" style="padding: 5px;">
     <style>
         * {

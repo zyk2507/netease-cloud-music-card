@@ -6,6 +6,8 @@
 
 ## 使用方法：
 
+### `Fork` 一份此仓库或者自己新建一个仓库
+
 ### 1. 获取网易云音乐用户 `id`
 
 ![image](https://user-images.githubusercontent.com/31311826/133114645-1a27d063-971d-4ede-9775-52f8052ef655.png)
@@ -15,4 +17,8 @@
 ### 2. 获取网易云音乐用户的 `TOKEN`
  * 打开网页控制台，找到 Application 下 Cookie 为 `MUSIC_U` 的值
 ![}QV)3FH9@L9LUJ({35JJI}M](https://user-images.githubusercontent.com/31311826/133136019-63bbf232-d8d0-469d-8a45-f46fffdbeaab.png)
+ * 打开自己项目中的设置，找到 `Secrets` 新建一个名为 `USER_TOKEN` 的 `Secrets`
+ ![image](https://user-images.githubusercontent.com/31311826/133136507-fb2b61f8-1c09-40b8-bb7e-90e3f43b2c55.png)
+ * 将第一步获取到的值粘贴进去
+
 

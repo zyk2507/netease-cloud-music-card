@@ -60,8 +60,8 @@ npm install
 ## 🤔 工作原理：
 
 * 使用 [NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi) 获取听歌记录
-* 基于 Github API 更新 `Card.svg`
-* 使用 Github Actions 定期更新 `Card.svg`
+* 基于 Github API 将 `index.js` 处理好的 `svg` 写入到仓库中
+* 使用 Github Actions 定期更新 `card.svg`
 
 ## 📄 开源协议
 

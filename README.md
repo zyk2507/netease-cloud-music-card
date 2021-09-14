@@ -35,7 +35,7 @@
 
 `![card](https://cdn.jsdelivr.net/gh/你的 Github 用户名/netease-music-card/card.svg)`
 
-## 本地测试：
+## 💨 本地测试：
 
 `Fork` 项目或者新建一份。
 
@@ -49,7 +49,7 @@ npm install
 
 如果你想在本地测试网易云 API 并且查看，请填写相应的值，并注意在 `push` 到仓库之前删除它
 
-## 灵感和帮助：
+## ❤️ 灵感和帮助：
 
 [spotify-github-profile](https://github.com/kittinan/spotify-github-profile)
 

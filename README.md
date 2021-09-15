@@ -53,11 +53,11 @@ npm install
 
 ## ❤️ 灵感和帮助：
 
-[spotify-github-profile](https://github.com/kittinan/spotify-github-profile)
+* [spotify-github-profile](https://github.com/kittinan/spotify-github-profile)
 
-[netease-music-box](https://github.com/Leecason/netease-music-box)
+* [netease-music-box](https://github.com/Leecason/netease-music-box)
 
-[NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
+* [NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
 
 ## 🤔 工作原理：
 

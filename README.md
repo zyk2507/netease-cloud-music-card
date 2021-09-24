@@ -1,6 +1,6 @@
 <div align="center"><img src="card.svg"></div>
 
-<div align="center"><h1>neteasemusic-github-profile</h1></div>
+<div align="center"><h1>Netease Cloud Music Card</h1></div>
 
 <div align="center">🎧 在 Github Profile 显示你这周在网易云音乐上最喜欢听的歌曲 🎵</div>
 

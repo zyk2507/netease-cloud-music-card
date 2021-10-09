@@ -11,7 +11,7 @@
 
 ### 1. 获取网易云音乐用户 `id`
 
-![image](https://user-images.githubusercontent.com/31311826/133114645-1a27d063-971d-4ede-9775-52f8052ef655.png)
+![image](https://cdn.jsdelivr.net/gh/nthily/netease-music-card/card.svg)
 
 然后修改 [main.yml](https://github.com/Nthily/netease-music-card/blob/main/.github/workflows/main.yml#L21) 中的 `USER_ID`
 

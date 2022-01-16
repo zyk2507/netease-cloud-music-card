@@ -1,3 +1,4 @@
+
 <div align="center"><img src="https://cdn.jsdelivr.net/gh/nthily/netease-music-card/card.svg"></div>
 
 <div align="center"><h1>Netease Cloud Music Card</h1></div>

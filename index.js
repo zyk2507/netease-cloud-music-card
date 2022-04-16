@@ -36,6 +36,7 @@ const {
 
     const content = record.body;
     const songId = content.weekData[0].song.id + '';
+    const sondLink = `https://music.163.com/#/song?id=${sondId}`
     const songName = content.weekData[0].song.name.replace("&", "&amp;");
     const songAuthorArray = content.weekData[0].song.ar;
     const playCount = content.weekData[0].playCount;
@@ -49,12 +50,13 @@ const {
 
     const songCover = songDetail.body.songs[0].al.picUrl + "?param=300y300";
 
-    console.log(`歌曲名：${songName}\n歌曲作者：${songAuthors}\n歌曲封面：${songCover}\n播放次数：${playCount}`);
+    console.log(`歌曲名：${songName}\n歌曲链接：${songLink}\n歌曲作者：${songAuthors}\n歌曲封面：${songCover}\n播放次数：${playCount}`);
 
     var svgContent = "";
     try {
         svgContent = Buffer.from(
 `<svg width="310" height="490" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+   <a href="${songLink}">
     <foreignObject width="310" height="490">
         <div xmlns="http://www.w3.org/1999/xhtml" class="container" style="padding: 5px;">
         <style>
@@ -216,6 +218,7 @@ const {
             </div>
         </div>
     </foreignObject>
+   </a>
 </svg>
 `
         ).toString("base64");

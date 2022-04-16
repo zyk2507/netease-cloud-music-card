@@ -36,7 +36,7 @@ const {
 
     const content = record.body;
     const songId = content.weekData[0].song.id + '';
-    const sondLink = `https://music.163.com/#/song?id=${sondId}`
+    const sondLink = "https://music.163.com/#/song?id=" + songId
     const songName = content.weekData[0].song.name.replace("&", "&amp;");
     const songAuthorArray = content.weekData[0].song.ar;
     const playCount = content.weekData[0].playCount;
